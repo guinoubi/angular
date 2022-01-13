@@ -1,0 +1,45 @@
+<!--
+<!--
+id : 1,
+name: 'Formation Web',
+track: 'MEAN Stack ',
+date: 'Prévue le 11/06/2018 au 15/06/2018',
+local: 'Lyon',
+participants: 0
+
+
+<h2>{{htmlSession.name}}</h2>
+<div>{{htmlSession.track}}</div><br>
+<div>Prévue le {{htmlSession.date | date:'d MMM y'}} pendant {{htmlSession.duree}} jours à {{htmlSession.local}}</div><br>
+
+<li *ngIf="htmlSession.participants < 20; then ok else notok"></li>
+<ng-template #ok> Encore {{20 - htmlSession.participants}} places sont disponibles !</ng-template>
+<ng-template #notok> Session Complete !  </ng-template>
+
+<div class="tools">
+<a class="delete"> Details </a>
+<a *ngIf="session.participants < 20" class="inscrire" (click)="inscription()"> </a>
+<a class="partager"> Partager </a>
+</div>
+
+ -->
+
+ <h2>{{session.name}}</h2>
+<!--<h2 [textContent]="name"></h2>-->
+<div>{{session.track}}</div>
+<div>Prévue le {{session.date | date}} pendant {{session.duree}} jours à {{session.local}} </div>
+<li *ngIf="session.participants < 20; then ok else notok"> </li>
+
+<ng-template #ok> Encore {{20 - session.participants}} places sont disponibles!</ng-template>
+<ng-template #notok>Session Complete!</ng-template>
+
+<div>{{session.participants}} Participants</div>
+
+<div class="tools">
+
+<a class="delete" (click)="onDelete()"> Suppimer </a>
+
+<a *ngIf="session.participants < 20" class="inscrire" (click)="inscription()"> Inscription </a>
+
+<a class="partager"> Partager </a>
+</div>

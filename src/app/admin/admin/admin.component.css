@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+section {
+width: 100%;
+background-color: #32435b;
+}
+
+section > header {
+color: #ffffff;
+padding: 10px;
+text-align: right;
+}
+section > header > h1 {
+font-size: 2em;
+text-align: center;
+}
+section > header .description {
+font-style: italic;
+}
+
+section > nav{
+  background-color: #53ace4;
+  width: 100px;
+  height: auto;
+  display:inline;
+  float: right;
+
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 15px;
+ }
+
+ footer {
+  text-align: right;
+ }
+
+
